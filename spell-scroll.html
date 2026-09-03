@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spell-Scroll</title>
+    <meta name="description" content="Dungeons and Dragons 5.5e Spell Casting Web-tool">
+    <meta name="author" content="Landon Mahaffey">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="spell-scroll.css">
+    <script defer src="spell-scroll.js"></script>
+    <script defer src="srd-5.2-spells.json"></script>
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Spell-Scroll">
+    <meta property="og:description" content="Dungeons and Dragons 5.5e Spell Casting Web-tool">
+    <meta property="og:url" content="https://landonm-byui.github.io/wdd131/personal-folder/spell-scroll.html">
+
+    <!-- Twitter Card -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Spell-Scroll">
+    <meta name="twitter:description" content="Dungeons and Dragons 5.5e Spell Casting Web-tool">
+    <meta name="twitter:image" content="https://landonm-byui.github.io/wdd131/personal-folder/images/Spell-Scroll-logo.png">
+
+    <!-- One favicon (ICO works everywhere) -->
+
+    <link rel="icon" href="favicon.ico?v=2">
+
+    <!-- One Apple Touch Icon (iOS home screen) -->
+
+    <link rel="apple-touch-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <img src="images/Spell-Scroll-logo.png" alt="Logo image">
+        <p id="how-to-use"><u>How to use this Web-tool</u></p>
+    </header>
+    <img class="background" src="images/dnd-ampersand.png" alt="d&d ampersand">
+
+    <div class="how-to-popup">
+        <section class="how-to-header">
+            <h2>How to use</h2>
+            <h2 class="close" id="close-how-to">x</h2>
+        </section>
+        <p>Welcome to Spell-Scroll, a Web-tool for Dungeons and Dragons 5e spellcasters.</p>
+        <p>To use the webtool:
+        <p> - First enter your Class</p>
+        <p> - Then Character Level (Multi-classing not supported)</p> 
+        <p> - And then Spellcasting bonus (Spellcasting ability modifier + any bonuses from magical items or abilities)</p>
+        <p>Afterwards, click the submit button. The website will automatically find all spells from the Player's handbook that are usable by your class at that level (Subclass expanded spell lists not yet supported).</p>
+        <p>Select the spell you wish to add using Select Spells drop down and click the add/remove spell button to add your spell. </p>
+        <p>If you already have that spell in your list, it will be removed for you. Your spells will acumulate in their respective sections by level.</p> 
+        <p>In those sections, use the toggles provided to show spell slots used for the day. The long rest button will clear all toggled spell-slots for you.</p>
+        <p>Click on a spell name to display a box at the bottom of the page with the spell's details. </p> <p>If you are tired of rolling your own spell attacks, use the Attack button beside your calculated Spell Attack to get a result. </p>
+        <p>Thank you for visiting and may all your hits be crits!</p>
+    </div>
+
+    <div class="characteristics-input">
+        <form id="characteristics">
+           <div class="field">
+                <label for="class">Choose a class:</label>
+                <select name="class" id="class">
+                    <option value="bard">Bard</option>
+                    <option value="cleric">Cleric</option>
+                    <option value="druid">Druid</option>
+                    <option value="paladin">Paladin</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="sorcerer">Sorcerer</option>
+                    <option value="warlock">Warlock</option>
+                    <option value="wizard">Wizard</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="level">Choose a Level:</label>
+                <select name="level" id="level">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                    <option value=10>10</option>
+                    <option value=11>11</option>
+                    <option value=12>12</option>
+                    <option value=13>13</option>
+                    <option value=14>14</option>
+                    <option value=15>15</option>
+                    <option value=16>16</option>
+                    <option value=17>17</option>
+                    <option value=18>18</option>
+                    <option value=19>19</option>
+                    <option value=20>20</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="spell-bonus">Spellcasting Ability + Mods</label>
+                <input id="spell-bonus" name="spell-bonus" type="number"  value="1">
+            </div>
+
+            <input id="char-submit" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <form class="spell-select" id="eventForm">
+            <label for="class-spell-list">Select Spells:</label>
+            <select name="class-spell-list" id="class-spell-list"></select>
+            <input id="toggleSpellBtn" type="submit" value="Add/Remove Spell">
+    </form>
+
+    <div class="characteristics-shown">
+            <p id="spell-atk">Spell Attack:</p>
+            <button class="attack-roll">Attack</button>
+            <p id="spell-sv">Spell Save:</p>
+            <button class="long-rest">Long Rest</button>
+    </div>
+
+    <div class="spells-section">
+        <div class="character-spell-list">
+        </div>
+
+        <div class="spell-popup hidden">
+            
+        </div>
+    </div>
+
+    <footer>
+        <p>Web-tool by Landon Mahaffey</p>
+        <p>Spell data by dmcb</p>
+        <a href="https://gist.github.com/dmcb/4b67869f962e3adaa3d0f7e5ca8f4912">here!</a>
+    </footer>
+</body>
+</html>
