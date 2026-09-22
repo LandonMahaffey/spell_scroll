@@ -1,0 +1,198 @@
+{
+    "cleric":
+    [{
+        "subclass": "Life Domain",
+        "spells": [
+            { "level": 1, "spells": ["Aid", "Bless", "Cure Wounds"] },
+            { "level": 2, "spells": ["Lesser Restoration", "Spiritual Weapon"] },
+            { "level": 3, "spells": ["Beacon of Hope", "Revivify"] },
+            { "level": 4, "spells": ["Death Ward", "Guardian of Faith"] },
+            { "level": 5, "spells": ["Mass Cure Wounds", "Raise Dead"] }
+    ]},
+    {
+        "subclass": "Light Domain",
+        "spells": [
+            { "level": 1, "spells": ["Burning Hands", "Faerie Fire"] },
+            { "level": 2, "spells": ["Scorching Ray", "See Invisibility"] },
+            { "level": 3, "spells": ["Daylight", "Fireball"] },
+            { "level": 4, "spells": ["Arcane Eye", "Wall of Fire"] },
+            { "level": 5, "spells": ["Flame Strike", "Scrying"] }
+    ]},
+    {
+  "subclass": "Trickery Domain",
+  "spells": [
+    { "level": 1, "spells": ["Charm Person", "Disguise Self"] },
+    { "level": 2, "spells": ["Invisibility", "Pass without Trace"] },
+    { "level": 3, "spells": ["Hypnotic Pattern", "Nondetection"] },
+    { "level": 4, "spells": ["Confusion", "Dimension Door"] },
+    { "level": 5, "spells": ["Dominate Person", "Modify Memory"] }
+  ]
+},
+{
+  "subclass": "War Domain",
+  "spells": [
+    { "level": 1, "spells": ["Guided Bolt", "Shield of Faith"] },
+    { "level": 2, "spells": ["Spiritual Weapon", "Hold Person"] },
+    { "level": 3, "spells": ["Crusader's Mantle", "Spirit Guardians"] },
+    { "level": 4, "spells": ["Freedom of Movement", "Stoneskin"] },
+    { "level": 5, "spells": ["Flame Strike", "Hold Monster"] }
+  ]
+}],
+
+    "druid": [
+        {"subclass": "Circle of the Land {Arid}",
+    "spells": [
+        { "level": 3, "spells": ["Blur", "Burning Hands"] },
+      { "level": 5, "spells": ["Fireball", "Stinking Cloud"] },
+      { "level": 7, "spells": ["Blight", "Wall of Fire"] },
+      { "level": 9, "spells": ["Cloudkill", "Insect Plague"] }
+    ]},
+    {"subclass": "Circle of the Land {Polar}",
+    "spells": [
+        { "level": 3, "spells": ["Fog Cloud", "Hold Person"] },
+      { "level": 5, "spells": ["Sleet Storm", "Slow"] },
+      { "level": 7, "spells": ["Confusion", "Ice Storm"] },
+      { "level": 9, "spells": ["Cone of Cold", "Commune with Nature"] }
+    ]},
+    {"subclass": "Circle of the Land {Temperate}",
+    "spells": [
+        { "level": 3, "spells": ["Misty Step", "Shocking Grasp"] },
+      { "level": 5, "spells": ["Lightning Bolt", "Meld into Stone"] },
+      { "level": 7, "spells": ["Freedom of Movement", "Stoneskin"] },
+      { "level": 9, "spells": ["Tree Stride", "Wrath of Nature"] }
+    ]},
+    {"subclass": "Circle of the Land {Tropical}",
+    "spells": [
+       { "level": 3, "spells": ["Ray of Enfeeblement", "Web"] },
+      { "level": 5, "spells": ["Plant Growth", "Vampiric Touch"] },
+      { "level": 7, "spells": ["Giant Insect", "Polymorph"] },
+      { "level": 9, "spells": ["Contagion", "Insect Plague"] }
+    ]}
+    ],
+    "paladin":[
+        {
+  "subclass": "Oath of Devotion",
+  "spells": [
+    { "level": 1, "spells": ["Protection from Evil and Good", "Shield of Faith"] },
+    { "level": 2, "spells": ["Aid", "Zone of Truth"] },
+    { "level": 3, "spells": ["Beacon of Hope", "Dispel Magic"] },
+    { "level": 4, "spells": ["Freedom of Movement", "Guardian of Faith"] },
+    { "level": 5, "spells": ["Commune", "Flame Strike"] }
+  ]
+},
+{
+  "subclass": "Oath of Glory",
+  "spells": [
+    { "level": 1, "spells": ["Guiding Bolt", "Heroism"] },
+    { "level": 2, "spells": ["Enhance Ability", "Magic Weapon"] },
+    { "level": 3, "spells": ["Haste", "Protection from Energy"] },
+    { "level": 4, "spells": ["Compulsion", "Freedom of Movement"] },
+    { "level": 5, "spells": ["Commune", "Legend Lore"] }
+  ]
+},
+{
+  "subclass": "Oath of the Ancients",
+  "spells": [
+    { "level": 1, "spells": ["Ensnaring Strike", "Speak with Animals"] },
+    { "level": 2, "spells": ["Misty Step", "Moonbeam"] },
+    { "level": 3, "spells": ["Plant Growth", "Protection from Energy"] },
+    { "level": 4, "spells": ["Ice Storm", "Stoneskin"] },
+    { "level": 5, "spells": ["Commune with Nature", "Tree Stride"] }
+  ]
+},
+{
+  "subclass": "Oath of Vengeance",
+  "spells": [
+    { "level": 1, "spells": ["Bane", "Hunter's Mark"] },
+    { "level": 2, "spells": ["Hold Person", "Misty Step"] },
+    { "level": 3, "spells": ["Haste", "Protection from Energy"] },
+    { "level": 4, "spells": ["Banishment", "Dimension Door"] },
+    { "level": 5, "spells": ["Hold Monster", "Scrying"] }
+  ]
+}],
+
+  "ranger":[
+    {
+  "subclass": "Fey Wanderer",
+  "spells": [
+    { "level": 1, "spells": ["Charm Person"] },
+    { "level": 2, "spells": ["Misty Step"] },
+    { "level": 3, "spells": ["Dispel Magic"] },
+    { "level": 4, "spells": ["Dimension Door"] },
+    { "level": 5, "spells": ["Mislead"] }
+  ]
+},
+{
+  "subclass": "Gloom Stalker",
+  "spells": [
+    { "level": 1, "spells": ["Disguise Self"] },
+    { "level": 2, "spells": ["Rope Trick"] },
+    { "level": 3, "spells": ["Fear"] },
+    { "level": 4, "spells": ["Greater Invisibility"] },
+    { "level": 5, "spells": ["Seeming"] }
+  ]
+}],
+  "warlock":[
+    {
+  "subclass": "Archfey Patron",
+  "spells": [
+    { "level": 1, "spells": ["Faerie Fire", "Sleep"] },
+    { "level": 2, "spells": ["Calm Emotions", "Phantasmal Force"] },
+    { "level": 3, "spells": ["Blink", "Plant Growth"] },
+    { "level": 4, "spells": ["Dominate Beast", "Greater Invisibility"] },
+    { "level": 5, "spells": ["Dominate Person", "Seeming"] }
+  ]
+},
+{
+  "subclass": "Celestial Patron",
+  "spells": [
+    { "level": 1, "spells": ["Cure Wounds", "Guiding Bolt"] },
+    { "level": 2, "spells": ["Aid", "Lesser Restoration"] },
+    { "level": 3, "spells": ["Daylight", "Revivify"] },
+    { "level": 4, "spells": ["Guardian of Faith", "Wall of Fire"] },
+    { "level": 5, "spells": ["Greater Restoration", "Summon Celestial"] }
+  ]
+},
+{
+  "subclass": "Fiend Patron",
+  "spells": [
+    { "level": 1, "spells": ["Burning Hands", "Command"] },
+    { "level": 2, "spells": ["Blindness/Deafness", "Scorching Ray"] },
+    { "level": 3, "spells": ["Fireball", "Stinking Cloud"] },
+    { "level": 4, "spells": ["Fire Shield", "Wall of Fire"] },
+    { "level": 5, "spells": ["Flame Strike", "Hallow"] }
+  ]
+},
+{
+  "subclass": "Great Old One Patron",
+  "spells": [
+    { "level": 1, "spells": ["Dissonant Whispers", "Tasha's Hideous Laughter"] },
+    { "level": 2, "spells": ["Detect Thoughts", "Phantasmal Force"] },
+    { "level": 3, "spells": ["Clairvoyance", "Hunger of Hadar"] },
+    { "level": 4, "spells": ["Confusion", "Evard's Black Tentacles"] },
+    { "level": 5, "spells": ["Modify Memory", "Telekinesis"] }
+  ]
+}
+  ],
+
+  "sorcerer":
+  [{
+  "subclass": "Aberrant Sorcery",
+  "spells": [
+    { "level": 1, "spells": ["Arms of Hadar", "Dissonant Whispers", "Mind Sliver"] },
+    { "level": 2, "spells": ["Calm Emotions", "Detect Thoughts"] },
+    { "level": 3, "spells": ["Hunger of Hadar", "Sending"] },
+    { "level": 4, "spells": ["Evard's Black Tentacles", "Summon Aberration"] },
+    { "level": 5, "spells": ["Rary's Telepathic Bond", "Telekinesis"] }
+  ]
+}, {
+  "subclass": "Clockwork Sorcery",
+  "spells": [
+    { "level": 1, "spells": ["Alarm", "Armor of Agathys"] },
+    { "level": 2, "spells": ["Aid", "Lesser Restoration"] },
+    { "level": 3, "spells": ["Dispel Magic", "Protection from Energy"] },
+    { "level": 4, "spells": ["Freedom of Movement", "Summon Construct"] },
+    { "level": 5, "spells": ["Greater Restoration", "Wall of Force"] }
+  ]
+}]
+}
