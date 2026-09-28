@@ -117,6 +117,10 @@ header img{
   margin-bottom: 20px;
 }
 
+.subclass-select{
+  text-align: center;
+}
+
 .characteristics-shown{
   text-align: center;
   margin: 20px;

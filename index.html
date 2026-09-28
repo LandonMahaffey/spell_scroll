@@ -39,7 +39,7 @@
     </header>
     <img class="background" src="images/dnd-ampersand.png" alt="d&d ampersand">
 
-    <div class="how-to-popup">
+    <div class="how-to-popup hidden">
         <section class="how-to-header">
             <h2>How to use</h2>
             <h2 class="close" id="close-how-to">x</h2>
@@ -113,6 +113,12 @@
             <select name="class-spell-list" id="class-spell-list"></select>
             <input id="toggleSpellBtn" type="submit" value="Add/Remove Spell">
     </form>
+    
+    <div class="subclass-select hidden" id="subclass-select">
+            <label for="subclass-list">Select Subclass:</label>
+            <select name="subclass-list" id="subclass-list"></select>
+            <button id="toggleSubclassBtn">Add Subclass Spells</button>   
+    </div>
 
     <div class="characteristics-shown">
             <p id="spell-atk">Spell Attack:</p>
