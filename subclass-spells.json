@@ -5,43 +5,38 @@
         "3": [
           "Aid",
           "Bless",
-          "Cure Wounds"
+          "Cure Wounds", 
+          "Lesser Restoration"
         ],
         "5": [
-          "Lesser Restoration",
-          "Spiritual Weapon"
-        ],
-        "9": [
-          "Beacon of Hope",
+          "Mass Healing Word",
           "Revivify"
         ],
-        "13": [
-          "Death Ward",
-          "Guardian of Faith"
+        "7": [
+          "Aura of Life",
+          "Death Ward"
         ],
-        "17": [
-          "Mass Cure Wounds",
-          "Raise Dead"
+        "9": [
+          "Greater Restoration",
+          "Mass Cure Wounds"
         ]
       },
       "Light Domain": {
         "3": [
           "Burning Hands",
-          "Faerie Fire"
-        ],
-        "5": [
+          "Faerie Fire",
           "Scorching Ray",
           "See Invisibility"
         ],
-        "9": [
+        "5": [
           "Daylight",
           "Fireball"
         ],
-        "13": [
+        "7": [
           "Arcane Eye",
           "Wall of Fire"
         ],
-        "17": [
+        "9": [
           "Flame Strike",
           "Scrying"
         ]
@@ -49,21 +44,19 @@
       "Trickery Domain": {
         "3": [
           "Charm Person",
-          "Disguise Self"
-        ],
-        "5": [
+          "Disguise Self",
           "Invisibility",
           "Pass without Trace"
         ],
-        "9": [
+        "5": [
           "Hypnotic Pattern",
           "Nondetection"
         ],
-        "13": [
+        "7": [
           "Confusion",
           "Dimension Door"
         ],
-        "17": [
+        "9": [
           "Dominate Person",
           "Modify Memory"
         ]
@@ -71,100 +64,126 @@
       "War Domain": {
         "3": [
           "Guided Bolt",
-          "Shield of Faith"
+          "Shield of Faith",
+          "Spiritual Weapon",
+          "Magic Weapon"
         ],
         "5": [
-          "Spiritual Weapon",
-          "Hold Person"
-        ],
-        "9": [
-          "Crusader\u0027s Mantle",
+          "Crusader\u0027s Mantle", 
           "Spirit Guardians"
         ],
-        "13": [
+        "7": [
           "Freedom of Movement",
-          "Stoneskin"
+          "Fire Shield"
         ],
-        "17": [
-          "Flame Strike",
+        "9": [
+          "Steel Wind Strike",
           "Hold Monster"
         ]
       }
     },
-  
     "druid": {
       "Circle of the Land {Arid}": {
         "3": [
           "Blur",
-          "Burning Hands"
+          "Burning Hands",
+          "Fire Bolt"
         ],
         "5": [
-          "Fireball",
-          "Stinking Cloud"
+          "Fireball"
         ],
         "7": [
-          "Blight",
-          "Wall of Fire"
+          "Blight"
         ],
         "9": [
-          "Cloudkill",
-          "Insect Plague"
+          "Wall of Stone"
         ]
       },
       "Circle of the Land {Polar}": {
         "3": [
           "Fog Cloud",
-          "Hold Person"
+          "Hold Person",
+          "Ray of Frost"
         ],
         "5": [
-          "Sleet Storm",
-          "Slow"
+          "Sleet Storm"
         ],
         "7": [
-          "Confusion",
           "Ice Storm"
         ],
         "9": [
-          "Cone of Cold",
-          "Commune with Nature"
+          "Cone of Cold"
         ]
       },
       "Circle of the Land {Temperate}": {
         "3": [
           "Misty Step",
-          "Shocking Grasp"
+          "Shocking Grasp",
+          "Sleep"
         ],
         "5": [
-          "Lightning Bolt",
-          "Meld into Stone"
+          "Lightning Bolt"
         ],
         "7": [
-          "Freedom of Movement",
-          "Stoneskin"
+          "Freedom of Movement"
         ],
         "9": [
-          "Tree Stride",
-          "Wrath of Nature"
+          "Tree Stride"
         ]
       },
       "Circle of the Land {Tropical}": {
         "3": [
-          "Ray of Enfeeblement",
-          "Web"
+          "Ray of Sickness",
+          "Web",
+          "Acid Splash"
         ],
         "5": [
-          "Plant Growth",
-          "Vampiric Touch"
+          "Stinking Cloud"
         ],
         "7": [
-          "Giant Insect",
           "Polymorph"
         ],
         "9": [
-          "Contagion",
           "Insect Plague"
         ]
-      }
+      },
+      "Circle of the Moon": {
+        "3": [
+          "Cure Wounds",
+          "Moonbeam",
+          "Starry Wisp"
+        ],
+        "5": [
+          "Conjure Animals"
+        ],
+        "7": [
+          "Fount Moonlight"
+        ],
+        "9": [
+          "Mass Cure Wounds"
+        ]
+      },
+      "Circle of the Sea": {
+        "3": [
+          "Fog Cloud", 
+          "Gust of Wind",
+          "Ray of Frost",
+          "Shatter",
+          "Thunderwave"
+        ],
+        "5": [
+          "Lightning Bolt",
+          "Water Breathing"
+        ],
+        "7": [
+          "Control Water",
+          "Ice Storm"
+        ],
+        "9": [
+          "Conjure Elemental", 
+          "Hold Monster"
+        ]
+      } 
     },
     "paladin": {
       "Oath of Devotion": {
@@ -207,8 +226,8 @@
           "Freedom of Movement"
         ],
         "17": [
-          "Commune",
-          "Legend Lore"
+          "Legend Lore",
+          "Regal Presence"
         ]
       },
       "Oath of the Ancients": {
@@ -236,7 +255,7 @@
       "Oath of Vengeance": {
         "3": [
           "Bane",
-          "Hunter\u0027s Mark"
+          "Hunter's Mark"
         ],
         "5": [
           "Hold Person",
@@ -254,6 +273,29 @@
           "Hold Monster",
           "Scrying"
         ]
+      },
+      "Oath of the Noble Genies": {
+        "3": [
+          "Chromatic Orb",
+          "Elementalism",
+          "Thunderous Smite"
+        ],
+        "5": [
+          "Mirror Image", 
+          "Phantasmal Force"
+        ],
+        "9": [
+          "Fly",
+          "Gaseous Form"
+        ],
+        "13": [
+          "Conjure Minor Elementals",
+          "Summon Elemental"
+        ],
+        "17": [
+          "Banishing Smite",
+          "Contact Other Plane"
+        ]
       }
     },
     "ranger": {
@@ -265,7 +307,7 @@
           "Misty Step"
         ],
         "9": [
-          "Dispel Magic"
+          "Summon Fey"
         ],
         "13": [
           "Dimension Door"
@@ -290,27 +332,43 @@
         "17": [
           "Seeming"
         ]
+      },
+      "Hollow Warden": {
+        "3":[
+          "Wrathful Smite"
+        ],
+        "5": [
+          "Alter Self"
+        ],
+        "9":[
+          "Phantom Steed"
+        ],
+        "13":[
+          "Dominate Beast"
+        ],
+        "17": [
+          "Steel Wind Strike"
+        ]
       }
     },
     "warlock": {
       "Archfey Patron": {
         "3": [
           "Faerie Fire",
-          "Sleep"
+          "Sleep",
+          "Calm Emotions",
+          "Phantasmal Force",
+          "Misty Step"
         ],
         "5": [
-          "Calm Emotions",
-          "Phantasmal Force"
-        ],
-        "9": [
           "Blink",
           "Plant Growth"
         ],
-        "13": [
+        "7": [
           "Dominate Beast",
           "Greater Invisibility"
         ],
-        "17": [
+        "9": [
           "Dominate Person",
           "Seeming"
         ]
@@ -318,21 +376,21 @@
       "Celestial Patron": {
         "3": [
           "Cure Wounds",
-          "Guiding Bolt"
+          "Guiding Bolt",
+          "Aid",
+          "Lesser Restoration",
+          "Light",
+          "Sacred Flame"
         ],
         "5": [
-          "Aid",
-          "Lesser Restoration"
-        ],
-        "9": [
           "Daylight",
           "Revivify"
         ],
-        "13": [
+        "7": [
           "Guardian of Faith",
           "Wall of Fire"
         ],
-        "17": [
+        "9": [
           "Greater Restoration",
           "Summon Celestial"
         ]
@@ -340,45 +398,61 @@
       "Fiend Patron": {
         "3": [
           "Burning Hands",
-          "Command"
+          "Command",
+          "Scorching Ray",
+          "Suggestion"
         ],
         "5": [
-          "Blindness/Deafness",
-          "Scorching Ray"
-        ],
-        "9": [
           "Fireball",
           "Stinking Cloud"
         ],
-        "13": [
+        "7": [
           "Fire Shield",
           "Wall of Fire"
         ],
-        "17": [
-          "Flame Strike",
-          "Hallow"
+        "9": [
+          "Geas",
+          "Insect Plague"
         ]
       },
       "Great Old One Patron": {
         "3": [
           "Dissonant Whispers",
-          "Tasha\u0027s Hideous Laughter"
-        ],
-        "5": [
+          "Hideous Laughter",
           "Detect Thoughts",
           "Phantasmal Force"
         ],
-        "9": [
+        "5": [
           "Clairvoyance",
           "Hunger of Hadar"
         ],
-        "13": [
+        "7":[
           "Confusion",
-          "Evard\u0027s Black Tentacles"
+          "Summon Aberration"
         ],
-        "17": [
+        "9": [
           "Modify Memory",
           "Telekinesis"
+        ]
+      },
+      "Undead Patron": {
+        "3": [
+          "Bane",
+          "Blindness/Deafness",
+          "Phantasmal Force",
+          "Ray of Sickness"
+        ],
+        "5": [
+          "Speak with Dead",
+          "Summon Undead"
+        ],
+        "7": [
+          "Greater Invisibility",
+          "Phantasmal Killer"
+        ],
+        "9": [
+          "Antilife Shell",
+          "Cloudkill"
         ]
       }
     },
@@ -388,45 +462,101 @@
         "3": [
           "Arms of Hadar",
           "Dissonant Whispers",
-          "Mind Sliver"
-        ],
-        "5": [
+          "Mind Sliver",
           "Calm Emotions",
           "Detect Thoughts"
         ],
-        "9": [
+        "5": [
           "Hunger of Hadar",
           "Sending"
         ],
-        "13": [
+        "7": [
           "Evard\u0027s Black Tentacles",
           "Summon Aberration"
         ],
-        "17": [
-          "Rary\u0027s Telepathic Bond",
+        "9": [
+          "Telepathic Bond",
           "Telekinesis"
         ]
       },
       "Clockwork Sorcery": {
         "3": [
           "Alarm",
-          "Armor of Agathys"
-        ],
-        "5": [
+          "Protection from Evil and Good",
           "Aid",
           "Lesser Restoration"
         ],
-        "9": [
+        "5": [
           "Dispel Magic",
           "Protection from Energy"
         ],
-        "13": [
+        "7": [
           "Freedom of Movement",
           "Summon Construct"
         ],
-        "17": [
+        "9": [
           "Greater Restoration",
           "Wall of Force"
+        ]
+      },
+      "Draconic Sorcery": {
+        "3": [
+          "Alter Self",
+          "Chromatic Orb",
+          "Command",
+          "Dragon's Breath"
+        ],
+        "5": [
+          "Fear",
+          "Fly"
+        ],
+        "7": [
+          "Arcane Eye",
+          "Charm Monster"
+        ],
+        "9": [
+          "Legend Lore",
+          "Summon Dragon"
+        ]
+      },
+      "Shadow Sorcery": {
+        "3": [
+          "Bane",
+          "Darkness",
+          "Inflict Wounds",
+          "Pass without Trace"
+        ],
+        "5": [
+          "Hunger of Hadar",
+          "Nondetection"
+        ],
+        "7": [
+          "Greater Invisibility",
+          "Phantasmal Killer"
+        ],
+        "9": [
+          "Contagion",
+          "Creation"
+        ]
+      },
+      "Spellfire Sorcery": {
+        "3": [
+          "Cure Wounds",
+          "Guided Bolt",
+          "Lesser Restoration",
+          "Scorching Ray"
+        ],
+        "5": [
+          "Aura of Vitality",
+          "Dispel Magic"
+        ],
+        "7": [
+          "Fire Shield",
+          "Wall of Fire"
+        ],
+        "9": [
+          "Greater Restoration",
+          "Flame Strike"
         ]
       }
     }

@@ -57,6 +57,185 @@
         <p>Thank you for visiting and may all your hits be crits!</p>
     </div>
 
+    <div class="homebrewPopUp hidden">
+        <section class="homebrew-header">
+            <h2>Homebrew</h2>
+            <h2 class="close" id="close-homebrew">x</h2>
+        </section>
+        <nav id="homebrew-nav" class="homebrew-nav" aria-label="Homebrew navigation">
+            <p id="subclass-form-screen"><u>Subclass</u></p>
+            <p id="spell-form-screen"><u>Spell</u></p>
+        </nav>
+        <hr>
+        <form id="subclass-form">
+            <div>
+                <label for="homebrew-class">Choose parent class:</label>
+                <select name="homebrew-class" id="homebrew-class" required>
+                    <option value="none">--</option>
+                    <option value="bard">Bard</option>
+                    <option value="cleric">Cleric</option>
+                    <option value="druid">Druid</option>
+                    <option value="paladin">Paladin</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="sorcerer">Sorcerer</option>
+                    <option value="warlock">Warlock</option>
+                    <option value="wizard">Wizard</option>
+                </select>
+            </div>
+            <div>
+                <label for="subclass-name">Name:</label>
+                <input name="subclass-name" id="subclass-name" required>
+                <hr>
+            </div>
+            <div class="homebrew-subclass-choice">
+            <select name="homebrew-subclass-spells" id="homebrew-subclass-spells">
+                </select>
+                <button id="add-spell-subclass">Add/Remove Spell</button>
+            </div>
+            <div class="homebrew-subclass-chosen-spells">
+                <p>Lv 3: </p>
+                <p>Lv 5: </p>
+                <p>Lv 7: </p>
+                <p>Lv 9: </p>
+            </div>
+            
+            <button type="submit" id="subclass-submit">Add Subclass</button>
+        </form>
+        <form class="hidden" id="spell-form">
+            <div>
+                <label for="spell-name">Name:</label>
+                <input name="spell-name" id="spell-name" required>
+            </div>
+            <div>
+                <label for="spell-lv">Level: </label>
+                <select name="spell-lv" id="spell-lv" required>
+                    <option value=0>Cantrip</option>
+                    <option value=1>Lv 1</option>
+                    <option value=2>Lv 2</option>
+                    <option value=3>Lv 3</option>
+                    <option value=4>Lv 4</option>
+                    <option value=5>Lv 5</option>
+                    <option value=6>Lv 6</option>
+                    <option value=7>Lv 7</option>
+                    <option value=8>Lv 8</option>
+                    <option value=9>Lv 9</option>
+                </select>
+            </div>
+            <div>
+                <label for="school">School: </label>
+                <select name="school" id="school" required>
+                    <option value="abjuration">Abjuration</option>
+                    <option value="conjuration">Conjuration</option>
+                    <option value="divination">Divination</option>
+                    <option value="enchantment">Enchantment</option>
+                    <option value="evocation">Evocation</option>
+                    <option value="illusion">Illusion</option>
+                    <option value="necromancy">Necromancy</option>
+                    <option value="transmutation">Transmutation</option>
+                </select>
+            </div>
+            <div>
+                <label for="conc">Concentration: </label>
+                <select name="conc" id="conc" required>
+                    <option value=false>No</option>
+                    <option value=true>Yes</option>
+                </select>
+            </div>
+            <div>
+                <label for="rit">Ritual: </label>
+                <select name="rit" id="rit" required>
+                    <option value=false>No</option>
+                    <option value=true>Yes</option>
+                </select>
+            </div>
+            <div>
+                <label for="c-time">Casting Time: </label>
+                <select name="c-time" id="c-time" data-field="c-time" required>
+                    <option value="action">Action</option>
+                    <option value="bonus action">Bonus Action</option>
+                    <option value="bonus action2">Bonus Action, when</option>
+                    <option value="reaction">Reaction</option>
+                    <option value="1 minute">1 minute</option>
+                    <option value="10 minute">10 minutes</option>
+                    <option value="1 hour">1 hour</option>
+                    <option value="8 hours">8 hours</option>
+                    <option value="24 hours">24 hours</option>
+                </select>
+            </div>
+            <div class="hidden" data-field="cast-trigger">
+                <label for="cast-trigger">Cast Trigger:</label>
+                <input name="cast-trigger" id="cast-trigger" value="which you take when, ">
+            </div>
+            <div>
+                <label for="range">Range:</label>
+                <input name="range" id="range" required>
+            </div>
+            <div>
+                <p>Components: </p>
+                <input type="checkbox" id="verbal" name="comp[]" value="v">
+                <label for="verbal">Verbal</label><br>
+                <input type="checkbox" id="somatic" name="comp[]" value="s">
+                <label for="somatic">Somatic</label><br>
+                <input data-field="material" type="checkbox" id="material" name="comp[]" value="m">
+                <label for="material">Material</label><br>
+            </div>
+            <div class="hidden" data-field="m-components">
+                <label for="m-components">Material:</label>
+                <input name="m-components" id="m-components">
+            </div>
+            <div>
+                <label for="duration">Duration: </label>
+                <select name="duration" id="duration" required>
+                    <option value="instantaneous">Instantaneous</option>
+                    <option value="1 round">1 round</option>
+                    <option value="1 minute">1 minute</option>
+                    <option value="10 minutes">10 minutes</option>
+                    <option value="1 hour">1 hour</option>
+                    <option value="8 hours">8 hours</option>
+                    <option value="10 hours">10 hours</option>
+                    <option value="special">Special</option>
+                    <option value="until dispelled or triggered">Until dispelled or triggered</option>
+                    <option value="until dispelled">Until dispelled</option>
+                    <option value="up to 6 rounds">Up to 6 rounds</option>
+                    <option value="up to 1 minute">Up to 1 minute</option>
+                    <option value="up to 10 minutes">Up to 10 minutes</option>
+                    <option value="up to 1 hour">Up to 1 hour</option>
+                    <option value="up to 2 hours">Up to 2 hours</option>
+                    <option value="up to 8 hours">Up to 8 hours</option>
+                    <option value="Up to 1 day">Up to 1 day</option>
+                </select>
+            </div>
+            <div>
+                <p>Classes:</p>
+                <input type="checkbox" id="bard" name="classes[]" value="bard">
+                <label for="bard">Bard</label><br>
+                <input type="checkbox" id="cleric" name="classes[]" value="cleric">
+                <label for="cleric">Cleric</label><br>
+                <input type="checkbox" id="druid" name="classes[]" value="druid">
+                <label for="druid">Druid</label><br>
+                <input type="checkbox" id="paladin" name="classes[]" value="paladin">
+                <label for="paladin">Paladin</label><br>
+                <input type="checkbox" id="ranger" name="classes[]" value="ranger">
+                <label for="ranger">Ranger</label><br>
+                <input type="checkbox" id="sorcerer" name="classes[]" value="sorcerer">
+                <label for="sorcerer">Sorcerer</label><br>
+                <input type="checkbox" id="warlock" name="classes[]" value="warlock">
+                <label for="warlock">Warlock</label><br>
+                <input type="checkbox" id="wizard" name="classes[]" value="wizard">
+                <label for="wizard">Wizard</label><br>
+            </div>
+            <div>
+                <label for="spell-description">Description:</label>
+                <input name="spell-description" id="spell-description" required>
+            </div>
+            <div>
+                <label for="spell-upcast">At higher levels:</label>
+                <input name="spell-upcast" id="spell-upcast">
+            </div>
+            <button type="submit" id="spell-submit">Add Spell</button>
+        </form>
+    </div>
+
     <div class="characteristics-input">
         <form id="characteristics">
            <div class="field">
@@ -137,6 +316,8 @@
     </div>
 
     <footer>
+        <button class="homebrewPopUpBtn">Add Homebrew</button>
+
         <p>Web-tool by Landon Mahaffey</p>
         <p>Spell data by dmcb</p>
         <a href="https://gist.github.com/dmcb/4b67869f962e3adaa3d0f7e5ca8f4912">here!</a>

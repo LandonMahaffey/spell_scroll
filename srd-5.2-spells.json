@@ -201,6 +201,19 @@
 		"description": "You create an Invisible, invulnerable eye within range that hovers for the duration. You mentally receive visual information from the eye, which can see in every direction. It also has Darkvision with a range of 30 feet. \n\nAs a Bonus Action, you can move the eye up to 30 feet in any direction. A solid barrier blocks the eye's movement, but the eye can pass through an opening as small as 1 inch in diameter."
 	},
 	{
+		"name": "Arcane Gate",
+		"level": 6,
+		"school": "conjuration",
+		"classes": ["sorcerer", "warlock", "wizard"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "500 feet",
+		"components": ["v","s"],
+		"duration": "up to 10 minutes",
+		"description": "You create linked teleportation portals that remain open for the duration. Choose two points on the ground that you can see, one point within 10 feet of you and one point within 500 feet of you. A circular portal, 10 feet in diameter, opens over each point. If the portal would open in the space occupied by a creature, the spell fails, and the casting is lost.\nThe portals are two-dimensional glowing rings filled with mist, hovering inches from the ground and perpendicular to it at the points you choose. A ring is visible only from one side (your choice), which is the side that functions as a portal.\nAny creature or object entering the portal exits from the other portal as if the two were adjacent to each other; passing through a portal from the nonportal side has no effect. The mist that fills each portal is opaque and blocks vision through it. On your turn, you can rotate the rings as a bonus action so that the active side faces in a different direction."
+	},
+	{
 		"name": "Arcane Hand",
 		"level": 5,
 		"school": "evocation",
@@ -244,6 +257,19 @@
 		"description": "You create a spectral sword that hovers within range. It lasts for the duration. \n\nWhen the sword appears, you make a melee spell attack against a target within 5 feet of the sword. On a hit, the target takes Force damage equal to 4d12 plus your spellcasting ability modifier.\n\nOn your later turns, you can take a Bonus Action to move the sword up to 30 feet to a spot you can see and repeat the attack against the same target or a different one."
 	},
 	{
+		"name": "Arcane Vigor",
+		"level": 2,
+		"school": "abjuration",
+		"classes": ["artificer", "sorcerer", "wizard"],
+		"actionType": "bonus action",
+		"concentration": false,
+		"ritual": false,
+		"range": "self",
+		"components": ["v", "s"],
+		"duration": "Instantaneous",
+		"description": "You tap into your life force to heal yourself. Roll one or two of your unexpended Hit Point Dice, and regain a number of Hit Points equal to the roll’s total plus your spellcasting ability modifier. Those dice are then expended.\n\n a Higher-Level Spell Slot. The number of unexpended Hit Dice you can roll increases by one for each spell slot level above 2."
+	},	
+	{
 		"name": "Arcanist's Magic Aura",
 		"level": 2,
 		"school": "illusion",
@@ -256,6 +282,34 @@
 		"material": "a small square of silk",
 		"duration": "24 hours",
 		"description": "With a touch, you place an illusion on a willing creature or an object that isn't being worn or carried. A creature gains the Mask effect below, and an object gains the False Aura effect below. The effect lasts for the duration. If you cast the spell on the same target every day for 30 days, the illusion lasts until dispelled. \n\n**Mask (Creature).** Choose a creature type other than the target's actual type. Spells and other magical effects treat the target as if it were a creature of the chosen type. \n\n**False Aura (Object).** You change the way the target appears to spells and magical effects that detect magical auras, such as Detect Magic. You can make a nonmagical object appear magical, make a magic item appear nonmagical, or change the object's aura so that it appears to belong to a school of magic you choose."
+	},
+	{
+		"name": "Armor of Agathys",
+		"level": 1,
+		"school": "abjuration",
+		"classes": ["warlock"],
+		"actionType": "bonus action",
+		"concentration": false,
+		"ritual": false,
+		"range": "self",
+		"components": ["v", "s", "m"],
+		"material": "a shard of blue glass",
+		"duration": "up to 1 hour",
+		"description": "Protective magical frost surrounds you. You gain 5 Temporary Hit Points. If a creature hits you with a melee attack roll before the spell ends, the creature takes 5 Cold damage. The spell ends early if you have no Temporary Hit Points.\n\nUsing a Higher-Level Spell Slot. The Temporary Hit Points and the Cold damage both increase by 5 for each spell slot level above 1."
+	},
+	{
+		"name": "Arms of Hadar",
+		"level": 1,
+		"school": "conjuration",
+		"classes": ["warlock"],
+		"actionType": "action",
+		"concentration": false,
+		"ritual": false,
+		"castingTime": "1 hour",
+		"range": "self",
+		"components": ["v", "s"],
+		"duration": "Instantaneous",
+		"description": "You and up to eight willing creatures within range project your astral bodies into the Astral Plane (the spell ends instantly if you are already on that plane). Each target's body is left behind in a state of suspended animation; it has the Unconscious condition, doesn't need food or air, and doesn't age. \n\nA target's astral form resembles its body in almost every way, replicating its game statistics and possessions. The principal difference is the addition of a silvery cord that trails from between the shoulder blades of the astral form. The cord fades from view after 1 foot. If the cord is cut—which happens only when an effect states that it does so—the target's body and astral form both die. A target's astral form can travel through the Astral Plane. The moment an astral form leaves that plane, the target's body and possessions travel along the silver cord, causing the target to re- enter its body on the new plane. \n\nAny damage or other effects that apply to an astral form have no effect on the target's body and vice versa. If a target's body or astral form drops to 0 Hit Points, the spell ends for that target. The spell ends for all the targets if you take a Magic action to dismiss it. When the spell ends for a target who isn't dead, the target reappears in its body and exits the state of suspended animation."
 	},
 	{
 		"name": "Astral Projection",
@@ -301,6 +355,32 @@
 		"description": "An aura radiates from you in a 30-foot Emanation for the duration. While in the aura, you and your allies have Resistance to Necrotic damage, and your Hit Point maximums can't be reduced. If an ally with 0 Hit Points starts its turn in the aura, that ally regains 1 Hit Point."
 	},
 	{
+		"name": "Aura of Purity",
+		"level": 4,
+		"school": "abjuration",
+		"classes": ["cleric", "paladin"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "Self",
+		"components": ["v"],
+		"duration": "up to 10 minutes",
+		"description": "An aura radiates from you in a 30-foot Emanation for the duration. While in the aura, you and your allies have Resistance to Poison damage and Advantage on saving throws to avoid or end effects that include the Blinded, Charmed, Deafened, Frightened, Paralyzed, Poisoned, or Stunned condition."
+	},
+	{
+		"name": "Aura of Vitality",
+		"level": 3,
+		"school": "abjuration",
+		"classes": ["cleric", "druid", "paladin"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "Self",
+		"components": ["v"],
+		"duration": "up to 1 minute",
+		"description": "An aura radiates from you in a 30-foot Emanation for the duration. When you create the aura and at the start of each of your turns while it persists, you can restore 2d6 Hit Points to one creature in it."
+	},
+	{
 		"name": "Awaken",
 		"level": 5,
 		"school": "transmutation",
@@ -331,6 +411,19 @@
 		"higherLevelSlot": "You can target one additional creature for each spell slot level above 1."
 	},
 	{
+		"name": "Banishing Smite",
+		"level": 5,
+		"school": "conjuration",
+		"classes": ["paladin"],
+		"actionType": "Bonus Action, which you take immediately after hitting a creature with a Melee weapon or an Unarmed Strike",
+		"concentration": true,
+		"ritual": false,
+		"range": "self",
+		"components": ["v"],
+		"duration": "up to 1 minute",
+		"description": "The target hit by the attack roll takes an extra 5d10 Force damage from the attack. If the attack reduces the target to 50 Hit Points or fewer, the target must succeed on a Charisma saving throw or be transported to a harmless demiplane for the duration. While there, the target has the Incapacitated condition. When the spell ends, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied."
+	},
+	{
 		"name": "Banishment",
 		"level": 4,
 		"school": "abjuration",
@@ -350,7 +443,7 @@
 		"level": 2,
 		"school": "transmutation",
 		"classes": ["druid", "ranger"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "Touch",
@@ -371,6 +464,19 @@
 		"components": ["v", "s"],
 		"duration": "up to 1 minute",
 		"description": "Choose any number of creatures within range. For the duration, each target has Advantage on Wisdom saving throws and Death Saving Throws and regains the maximum number of Hit Points possible from any healing."
+	},
+	{
+		"name": "Beast Sense",
+		"level": 2,
+		"school": "divination",
+		"classes": ["druid","ranger"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": true,
+		"range": "Touch",
+		"components": ["s"],
+		"duration": "up to 1 hour",
+		"description": "You touch a willing Beast. For the duration, you can perceive through the Beast’s senses as well as your own. When perceiving through the Beast’s senses, you benefit from any special senses it has."
 	},
 	{
 		"name": "Befuddlement",
@@ -428,6 +534,19 @@
 		"description": "You create a wall of whirling blades made of magical energy. The wall appears within range and lasts for the duration. You make a straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall provides Three-Quarters Cover, and its space is Difficult Terrain. Any creature in the wall's space makes a Dexterity saving throw, taking 6d10 Force damage on a failed save or half as much damage on a successful one. A creature also makes that save if it enters the wall's space or ends it turn there. A creature makes that save only once per turn."
 	},
 	{
+		"name": "Blade Ward",
+		"level": 0,
+		"school": "abjuration",
+		"classes": ["bard", "sorcerer", "warlock", "wizard"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "self",
+		"components": ["v", "s"],
+		"duration": "up to 1 minute",
+		"description": "Whenever a creature makes an attack roll against you before the spell ends, the attacker subtracts 1d4 from the attack roll."
+	},
+	{
 		"name": "Bless",
 		"level": 1,
 		"school": "enchantment",
@@ -455,6 +574,20 @@
 		"duration": "Instantaneous",
 		"description": "A creature that you can see within range makes a Constitution saving throw, taking 8d8 Necrotic damage on a failed save or half as much damage on a successful one. A Plant creature automatically fails the save. \n\nAlternatively, target a nonmagical plant that isn't a creature, such as a tree or shrub. It doesn't make a save; it simply withers and dies.",
 		"higherLevelSlot": "The damage increases by 1d8 for each spell slot level above 4."
+	},
+	{
+		"name": "Blinding Smite",
+		"level": 3,
+		"school": "evocation",
+		"classes": ["paladin"],
+		"actionType": " Bonus Action, which you take immediately after hitting a creature with a Melee weapon or an Unarmed Strike",
+		"concentration": false,
+		"ritual": false,
+		"range": "self",
+		"components": ["v"],
+		"duration": "up to 1 minute",
+		"description": "The target hit by the strike takes an extra 3d8 Radiant damage from the attack, and the target has the Blinded condition until the spell ends. At the end of each of its turns, the Blinded target makes a Constitution saving throw, ending the spell on itself on a success.",
+		"higherLevelSlot": "The extra damage increases by 1d8 for each spell slot level above 3."
 	},
 	{
 		"name": "Blindness/Deafness",
@@ -625,6 +758,19 @@
 		"higherLevelSlot": "The damage increases by 2d8 for each spell slot level above 6."
 	},
 	{
+		"name": "Circle of Power",
+		"level": 5,
+		"school": "abjuration",
+		"classes": ["artificer", "cleric", "paladin", "wizard"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "self",
+		"components": ["v"],
+		"duration": "up to 10 minutes",
+		"description": "An aura radiates from you in a 30-foot Emanation for the duration. While in the aura, you and your allies have Advantage on saving throws against spells and other magical effects. When an affected creature makes a saving throw against a spell or magical effect that allows a save to take only half damage, it takes no damage if it succeeds on the save."
+	},
+	{
 		"name": "Clairvoyance",
 		"level": 3,
 		"school": "divination",
@@ -653,6 +799,21 @@
 		"material": "a diamond worth 1,000+ GP, which the spell consumes, and a vessel worth 2,000+ GP that is large enough to hold the creature being cloned",
 		"duration": "Instantaneous",
 		"description": "You touch a creature or at least 1 cubic inch of its flesh. An inert duplicate of that creature forms inside the vessel used in the spell's casting and finishes growing after 120 days; you choose whether the finished clone is the same age as the creature or younger. The clone remains inert and endures indefinitely while its vessel remains undisturbed. \n\nIf the original creature dies after the clone finishes forming, the creature's soul transfers to the clone if the soul is free and willing to return. The clone is physically identical to the original and has the same personality, memories, and abilities, but none of the original's equipment. The creature's original remains, if any, become inert and can't be revived, since the creature's soul is elsewhere."
+	},
+	{
+		"name": "Cloud of Daggers",
+		"level": 2,
+		"school": "conjuration",
+		"classes": ["bard", "warlock", "sorcerer", "wizard"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "60 feet",
+		"components": ["v", "s", "m"],
+		"duration": "up to 1 minute",
+		"material": "a sliver of glass",
+		"description": "You conjure spinning daggers in a 5-foot Cube centered on a point within range. Each creature in that area takes 4d4 Slashing damage. A creature also takes this damage if it enters the Cube or ends its turn there or if the Cube moves into its space. A creature takes this damage only once per turn.\n\nOn your later turns, you can take a Magic action to teleport the Cube up to 30 feet.",
+		"higherLevelSlot": "The damage increases by 2d4 for each spell slot level above 2."
 	},
 	{
 		"name": "Cloudkill",
@@ -724,6 +885,19 @@
 		"components": ["v", "s"],
 		"duration": "Instantaneous",
 		"description": "You commune with nature spirits and gain knowledge of the surrounding area. In the outdoors, the spell gives you knowledge of the area within 3 miles of you. In caves and other natural underground settings, the radius is limited to 300 feet. The spell doesn't function where nature has been replaced by construction, such as in castles and settlements. \n\nChoose three of the following facts; you learn those facts as they pertain to the spell's area: \n\n- Locations of settlements \n\n- Locations of portals to other planes of existence \n\n- Location of one Challenge Rating 10+ creature (DM's choice) that is a Celestial, an Elemental, a Fey, a Fiend, or an Undead \n\n- The most prevalent kind of plant, mineral, or Beast (you choose which to learn) \n\n- Locations of bodies of water \n\nFor example, you could determine the location of a powerful monster in the area, the locations of bodies of water, and the locations of any towns."
+	},
+	{
+		"name": "Compelled Duel",
+		"level": 1,
+		"school": "enchantment",
+		"classes": ["paladin"],
+		"actionType": "bonus action",
+		"concentration": true,
+		"ritual": false,
+		"range": "30 feet",
+		"components": ["v"],
+		"duration": "up to 1 minute",
+		"description": "You try to compel a creature into a duel. One creature that you can see within range makes a Wisdom saving throw. On a failed save, the target has Disadvantage on attack rolls against creatures other than you, and it can't willingly move to a space that is more than 30 feet away from you.\n\nThe spell ends if you make an attack roll against a creature other than the target, if you cast a spell on an enemy other than the target, if an ally of yours damages the target, or if you end your turn more than 30 feet away from the target."
 	},
 	{
 		"name": "Comprehend Languages",
@@ -853,6 +1027,20 @@
 		"higherLevelSlot": "The damage increases by 2d8 for each spell slot level above 4."
 	},
 	{
+		"name": "Conjure Volley",
+		"level": 5,
+		"school": "conjuration",
+		"classes": ["ranger"],
+		"actionType": "action",
+		"concentration": false,
+		"ritual": false,
+		"range": "150 feet",
+		"components": ["v", "s", "m"],
+		"material": "a Melee or Ranged weapon worth at least 1 CP",
+		"duration": "Instantaneous",
+		"description": "You brandish the weapon used to cast the spell and choose a point within range. Hundreds of similar spectral weapons (or ammunition appropriate to the weapon) fall in a volley and then disappear. Each creature of your choice that you can see in a 40-foot-radius, 20-foot-high Cylinder centered on that point makes a Dexterity saving throw. A creature takes 8d8 Force damage on a failed save or half as much damage on a successful one."
+	},
+	{
 		"name": "Conjure Woodland Beings",
 		"level": 4,
 		"school": "conjuration",
@@ -952,6 +1140,21 @@
 		"description": "You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell, and it ends early if you go indoors. When you cast the spell, you change the current weather conditions, which are determined by the DM. You can change precipitation, temperature, and wind. It takes 1d4 × 10 minutes for the new conditions to take effect. Once they do so, you can change the conditions again. When the spell ends, the weather gradually returns to normal. When you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction. \n\n**Precipitation** \n\nStage Condition \n\n1 Clear \n\n2 Light clouds \n\n3 Overcast or ground fog \n\n4 Rain, hail, or snow \n\n5 Torrential rain, driving hail, or blizzard \n\n**Temperature** \n\nStage Condition \n\n1 Heat wave \n\n2 Hot \n\n3 Warm \n\n4 Cool \n\n5 Cold \n\n6 Freezing \n\n**Wind** \n\nStage Condition \n\n1 Calm \n\n2 Moderate wind \n\n3 Strong wind \n\n4 Gale \n\n5 Storm."
 	},
 	{
+		"name": "Cordon of Arrows",
+		"level": 2,
+		"school": "transmutation",
+		"classes": ["ranger"],
+		"actionType": "action",
+		"concentration": false,
+		"ritual": false,
+		"range": "Touch",
+		"components": ["v", "s", "m"],
+		"material": "an ornamental braid",
+		"duration": "up to 8 hours",
+		"description": "You touch up to four nonmagical Arrows or Bolts and plant them in the ground in your space. Until the spell ends, the ammunition can’t be physically uprooted, and whenever a creature other than you enters a space within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. The creature must succeed on a Dexterity saving throw or take 2d4 Piercing damage. The piece of ammunition is then destroyed. The spell ends when none of the ammunition remains planted in the ground.\n\nWhen you cast this spell, you can designate any creatures you choose, and the spell ignores them.",
+		"higherLevelSlot": "The amount of ammunition that can be affected increases by two for each spell slot level above 2."
+	},
+	{
 		"name": "Counterspell",
 		"level": 3,
 		"school": "abjuration",
@@ -1024,6 +1227,32 @@
 		"duration": "Special",
 		"description": "You pull wisps of shadow material from the Shadowfell to create an object within range. It is either an object of vegetable matter (soft goods, rope, wood, and the like) or mineral matter (stone, crystal, metal, and the like). The object must be no larger than a 5-foot Cube, and the object must be of a form and material that you have seen. \n\nThe spell's duration depends on the object's material, as shown in the Materials table. If the object is composed of multiple materials, use the shortest duration. Using any object created by this spell as another spell's Material component causes the other spell to fail.\n\n| Material              | Duration   |\n|-----------------------|------------|\n| Vegetable matter | 24 hours |\n| Stone or crystal | 12 hours |\n| Precious metals | 1 hour |\n| Gems | 10 minutes |\n| Adamantine or mithral | 1 minute. |\n|                       |            |\n\n ",
 		"higherLevelSlot": "The Cube increases by 5 feet for each spell slot level above 5."
+	},
+	{
+		"name": "Crown of Madness",
+		"level": 2,
+		"school": "enchantment",
+		"classes": ["bard", "sorcerer", "warlock", "wizard"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "120 feet",
+		"components": ["v", "s"],
+		"duration": "up to 1 minute",
+		"description": "One creature that you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The creature succeeds automatically if it isn’t Humanoid.n\nA spectral crown appears on the Charmed target's head, and it must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if no creature is within its reach. The target repeats the save at the end of each of its turns, ending the spell on itself on a success.\n\nOn your later turns, you must take the Magic action to maintain control of the target, or the spell ends."
+	},
+	{
+		"name": "Crusader's Mantle",
+		"level": 3,
+		"school": "evocation",
+		"classes": ["paladin"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "self",
+		"components": ["v"],
+		"duration": "up to 1 minute",
+		"description": "You radiate a magical aura in a 30-foot Emanation. While in the aura, you and your allies each deal an extra 1d4 Radiant damage when hitting with a weapon or an Unarmed Strike."
 	},
 	{
 		"name": "Cure Wounds",
@@ -1134,6 +1363,19 @@
 		"components": ["s"],
 		"duration": "1 hour",
 		"description": "You create a shadowy Medium door on a flat solid surface that you can see within range. This door can be opened and closed, and it leads to a demiplane that is an empty room 30 feet in each dimension, made of wood or stone (your choice). \n\nWhen the spell ends, the door vanishes, and any objects inside the demiplane remain there. Any creatures inside also remain unless they opt to be shunted through the door as it vanishes, landing with the Prone condition in the unoccupied spaces closest to the door's former space. \n\nEach time you cast this spell, you can create a new demiplane or connect the shadowy door to a demiplane you created with a previous casting of this spell. Additionally, if you know the nature and contents of a demiplane created by a casting of this spell by another creature, you can connect the shadowy door to that demiplane instead."
+	},
+	{
+		"name": "Destructive Wave",
+		"level": 5,
+		"school": "evocation",
+		"classes": ["paladin"],
+		"actionType": "action",
+		"concentration": false,
+		"ritual": false,
+		"range": "self",
+		"components": ["v"],
+		"duration": "Instantaneous",
+		"description": "YDestructive energy ripples outward from you in a 30-foot Emanation. Each creature you choose in the Emanation makes a Constitution saving throw. On a failed save, a target takes 5d6 Thunder damage and 5d6 Radiant or Necrotic damage (your choice) and has the Prone condition. On a successful save, a target takes half as much damage only."
 	},
 	{
 		"name": "Detect Evil and Good",
@@ -1291,7 +1533,7 @@
 		"level": 1,
 		"school": "transmutation",
 		"classes": ["paladin"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "Self",
@@ -1304,7 +1546,7 @@
 		"level": 1,
 		"school": "evocation",
 		"classes": ["paladin"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"castingTrigger": "which you take immediately after hitting a target with a melee weapon or an unarmed strike",
@@ -1319,7 +1561,7 @@
 		"level": 7,
 		"school": "evocation",
 		"classes": ["cleric"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "30 feet",
@@ -1374,7 +1616,7 @@
 		"level": 2,
 		"school": "transmutation",
 		"classes": ["sorcerer", "wizard"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": true,
 		"ritual": false,
 		"range": "Touch",
@@ -1487,7 +1729,7 @@
 		"level": 1,
 		"school": "conjuration",
 		"classes": ["ranger"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": true,
 		"ritual": false,
 		"castingTrigger": "which you take immediately after hitting a creature with a weapon",
@@ -1542,7 +1784,7 @@
 		"level": 1,
 		"school": "transmutation",
 		"classes": ["sorcerer", "warlock", "wizard"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": true,
 		"ritual": false,
 		"range": "Self",
@@ -1647,6 +1889,20 @@
 		"material": "a small feather or piece of down",
 		"duration": "1 minute",
 		"description": "Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If a creature lands before the spell ends, the creature takes no damage from the fall, and the spell ends for that creature."
+	},
+	{
+		"name": "Feign Death",
+		"level": 3,
+		"school": "necromancy",
+		"classes": ["bard", "cleric", "druid", "wizard"],
+		"actionType": "action",
+		"concentration": false,
+		"ritual": true,
+		"range": "Touch",
+		"components": ["v", "s", "m"],
+		"material": "a pinch of graveyard dirt",
+		"duration": "up to 1 hour",
+		"description": "You touch a willing creature and put it into a cataleptic state that is indistinguishable from death.\n\nFor the duration, the target appears dead to outward inspection and to spells used to determine the target’s status. The target has the Blinded and Incapacitated conditions, and its Speed is 0.\n\nThe target also has Resistance to all damage except Psychic damage, and it has Immunity to the Poisoned condition."
 	},
 	{
 		"name": "Find Familiar",
@@ -1779,7 +2035,7 @@
 		"level": 2,
 		"school": "evocation",
 		"classes": ["druid", "sorcerer"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": true,
 		"ritual": false,
 		"range": "Self",
@@ -1921,6 +2177,19 @@
 		"description": "You touch a willing creature and bestow a limited ability to see into the immediate future. For the duration, the target has Advantage on D20 Tests, and other creatures have Disadvantage on attack rolls against it. The spell ends early if you cast it again."
 	},
 	{
+		"name": "Fount of Moonlight",
+		"level": 4,
+		"school": "evocation",
+		"classes": ["bard", "druid"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "self",
+		"components": ["v", "s"],
+		"duration": "up to 10 minutes",
+		"description": "A cool light wreathes your body for the duration, emitting Bright Light in a 20-foot radius and Dim Light for an additional 20 feet.\n\nUntil the spell ends, you have Resistance to Radiant damage, and your melee attacks deal an extra 2d6 Radiant damage on a hit.\n\nIn addition, immediately after you take damage from a creature you can see within 60 feet of yourself, you can take a Reaction to force the creature to make a Constitution saving throw. On a failed save, the creature has the Blinded condition until the end of your next turn."
+	},
+	{
 		"name": "Freedom of Movement",
 		"level": 4,
 		"school": "abjuration",
@@ -1949,6 +2218,20 @@
 		"duration": "Instantaneous",
 		"description": "A frigid globe streaks from you to a point of your choice within range, where it explodes in a 60-foot-radius Sphere. Each creature in that area makes a Constitution saving throw, taking 10d6 Cold damage on failed save or half as much damage on a successful one.\n\nIf the globe strikes a body of water, it freezes the water to a depth of 6 inches over an area 30 feet square. This ice lasts for 1 minute. Creatures that were swimming on the surface of frozen water are trapped in the ice and have the Restrained condition. A trapped creature can take an action to make a Strength (Athletics) check against your spell save DC to break free.\n\nYou can refrain from firing the globe after completing the spell’s casting. If you do so, a globe about the size of a sling bullet, cool to the touch, appears in your hand. At any time, you or a creature you give the globe to can throw the globe (to a range of 40 feet) or hurl it with a sling (to the sling’s normal range). It shatters on impact, with the same effect as a normal casting of the spell. You can also set the globe down without shattering it. After 1 minute, if the globe hasn’t already shattered, it explodes.",
 		"higherLevelSlot": "The damage increases by 1d6 for each slot level above 6."
+	},
+	{
+		"name": "Freinds",
+		"level": 0,
+		"school": "enchantment",
+		"classes": ["bard", "sorcerer", "warlock", "wizard"],
+		"actionType": "action",
+		"concentration": false,
+		"ritual": false,
+		"range": "10 feet",
+		"components": ["v", "s", "m"],
+		"material": "some makeup",
+		"duration": "up to 1 minute",
+		"description": "You magically emanate a sense of friendship toward one creature you can see within range. The target must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The target succeeds automatically if it isn’t a Humanoid, if you’re fighting it, or if you have cast this spell on it within the past 24 hours.\n\nThe spell ends early if the target takes damage or if you make an attack roll, deal damage, or force anyone to make a saving throw. When the spell ends, the target knows it was Charmed by you."
 	},
 	{
 		"name": "Gaseous Form",
@@ -2191,6 +2474,20 @@
 		"description": "A Line of strong wind 60 feet long and 10 feet wide blasts from you in a direction you choose for the duration. Each creature in the Line must succeed on a Strength saving throw or be pushed 15 feet away from you in a direction following the Line. A creature that ends its turn in the Line must make the same save. \n\nAny creature in the Line must spend 2 feet of movement for every 1 foot it moves when moving closer to you.\n\nThe gust disperses gas or vapor, and it extinguishes candles and similar unprotected flames in the area. It causes protected flames, such as those of lanterns, to dance wildly and has a 50 percent chance to extinguish them. \n\nAs a Bonus Action on your later turns, you can change the direction in which the Line blasts from you."
 	},
 	{
+		"name": "Hail of Thorns",
+		"level": 1,
+		"school": "conjuration",
+		"classes": ["ranger"],
+		"actionType": "Bonus Action, which you take immediately after hitting a creature with a Ranged weapon",
+		"concentration": false,
+		"ritual": false,
+		"range": "Self",
+		"components": ["v"],
+		"duration": "Instantaneous",
+		"description": "As you hit the creature, this spell creates a rain of thorns that sprouts from your Ranged weapon or ammunition. The target of the attack and each creature within 5 feet of it make a Dexterity saving throw, taking 1d10 Piercing damage on a failed save or half as much damage on a successful one.",
+		"higherLevelSlot": "The damage increases by 1d10 for each spell slot level above 1."
+	},
+	{
 		"name": "Hallow",
 		"level": 5,
 		"school": "abjuration",
@@ -2266,7 +2563,7 @@
 		"level": 1,
 		"school": "abjuration",
 		"classes": ["bard", "cleric", "druid"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "60 feet",
@@ -2339,7 +2636,7 @@
 		"level": 1,
 		"school": "enchantment",
 		"classes": ["warlock"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": true,
 		"ritual": false,
 		"range": "90 feet",
@@ -2409,11 +2706,26 @@
 		"description": "For the duration, you emit an aura in a 30-foot Emanation. While in the aura, creatures of your choice have Advantage on all saving throws, and other creatures have Disadvantage on attack rolls against them. In addition, when a Fiend or an Undead hits an affected creature with a melee attack roll, the attacker must succeed on a Constitution saving throw or have the Blinded condition until the end of its next turn."
 	},
 	{
+		"name": "Hunger of Hadar",
+		"level": 3,
+		"school": "conjuration",
+		"classes": ["warlock"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "150 feet",
+		"components": ["v", "s", "m"],
+		"material": "a pickled tentacle",
+		"duration": "up to 1 minute",
+		"description": "You open a gateway to the Far Realm, a region infested with unspeakable horrors. A 20-foot-radius Sphere of Darkness appears, centered on a point with range and lasting for the duration. The Sphere is Difficult Terrain, and it is filled with strange whispers and slurping noises, which can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within it have the Blinded condition.\n\nAny creature that starts its turn in the area takes 2d6 Cold damage. Any creature that ends its turn there must succeed on a Dexterity saving throw or take 2d6 Acid damage from otherworldly tentacles",
+		"higherLevelSlot": "The Cold or Acid damage (your choice) increases by 1d6 for each spell slot level above 3."
+	},
+	{
 		"name": "Hunter's Mark",
 		"level": 1,
 		"school": "divination",
 		"classes": ["ranger"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": true,
 		"ritual": false,
 		"range": "90 feet",
@@ -2601,7 +2913,7 @@
 		"level": 1,
 		"school": "transmutation",
 		"classes": ["druid", "ranger", "sorcerer", "wizard"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "Touch",
@@ -2644,7 +2956,7 @@
 		"level": 2,
 		"school": "abjuration",
 		"classes": ["bard", "cleric", "druid", "paladin", "ranger"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "Touch",
@@ -2679,6 +2991,20 @@
 		"material": "a firefly or phosphorescent moss",
 		"duration": "1 hour",
 		"description": "You touch one Large or smaller object that isn't being worn or carried by someone else. Until the spell ends, the object sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. The light can be colored as you like. \n\nCovering the object with something opaque blocks the light. The spell ends if you cast it again."
+	},
+	{
+		"name": "Lighting Arrow",
+		"level": 3,
+		"school": "transmutation",
+		"classes": ["ranger"],
+		"actionType": "Bonus Action, which you take immediately after hitting or missing a target with a ranged attack using a weapon",
+		"concentration": false,
+		"ritual": false,
+		"range": "self",
+		"components": ["v", "s"],
+		"duration": "Instantaneous",
+		"description": "As your attack hits or misses the target, the weapon or ammunition you’re using transforms into a lightning bolt. Instead of taking any damage or other effects from the attack, the target takes 4d8 Lightning damage on a hit or half as much damage on a miss. Each creature within 10 feet of the target then makes a Dexterity saving throw, taking 2d8 Lightning damage on a failed save or half as much damage on a successful one.\n\nThe weapon or ammunition then returns to its normal form.", 
+		"higherLevelSlot": "The damage for both effects of the spell increases by 1d8 for each spell slot level above 3."
 	},
 	{
 		"name": "Lightning Bolt",
@@ -2844,7 +3170,7 @@
 		"level": 2,
 		"school": "transmutation",
 		"classes": ["paladin", "ranger", "sorcerer", "wizard"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "Touch",
@@ -2915,7 +3241,7 @@
 		"level": 3,
 		"school": "abjuration",
 		"classes": ["bard", "cleric"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "60 feet",
@@ -3021,6 +3347,20 @@
 		"description": "Until the spell ends, one willing creature you touch has Immunity to Psychic damage and the Charmed condition. The target is also unaffected by anything that would sense its emotions or alignment, read its thoughts, or magically detect its location, and no spell—not even Wish—can gather information about the target, observe it remotely, or control its mind."
 	},
 	{
+		"name": "Mind Sliver",
+		"level": 0,
+		"school": "enchantment",
+		"classes": ["sorcerer", "warlock", "wizard"],
+		"actionType": "action",
+		"concentration": false,
+		"ritual": false,
+		"range": "60 feet",
+		"components": ["v"],
+		"duration": "1 round",
+		"description": "You try to temporarily sliver the mind of one creature you can see within range. The target must succeed on an Intelligence saving throw or take 1d6 Psychic damage and subtract 1d4 from the next saving throw it makes before the end of your next turn.",
+		"cantripUpgrade": "The damage increases by 1d6 when you reach levels 5 (2d6), 11 (3d6), and 17 (4d6)."
+	},
+	{
 		"name": "Mind Spike",
 		"level": 2,
 		"school": "divination",
@@ -3093,7 +3433,7 @@
 		"level": 2,
 		"school": "conjuration",
 		"classes": ["sorcerer", "warlock", "wizard"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "Self",
@@ -3315,6 +3655,19 @@
 		"description": "You attempt to transform a creature that you can see within range into a Beast. The target must succeed on a Wisdom saving throw or shape-shift into Beast form for the duration. That form can be any Beast you choose that has a Challenge Rating equal to or less than the target's (or the target's level if it doesn't have a Challenge Rating). The target's game statistics are replaced by the stat block of the chosen Beast, but the target retains its alignment, personality, creature type, Hit Points, and Hit Point Dice. \n\nThe target gains a number of Temporary Hit Points equal to the Hit Points of the Beast form. The spell ends early on the target if it has no Temporary Hit Points left. \n\nThe target is limited in the actions it can perform by the anatomy of its new form, and it can't speak or cast spells. \n\nThe target's gear melds into the new form. The creature can't use or otherwise benefit from any of that equipment."
 	},
 	{
+		"name": "Power Word Fortify",
+		"level": 7,
+		"school": "enchantment",
+		"classes": ["bard", "cleric"],
+		"actionType": "action",
+		"concentration": false,
+		"ritual": false,
+		"range": "60 feet",
+		"components": ["v"],
+		"duration": "Instantaneous",
+		"description": "You speak a word of power that fortifies up to six creatures you can see within range. The spell bestows 120 Temporary Hit Points, which are divided equally among the spell’s recipients."
+	},
+	{
 		"name": "Power Word Heal",
 		"level": 9,
 		"school": "enchantment",
@@ -3428,7 +3781,7 @@
 		"level": 0,
 		"school": "conjuration",
 		"classes": ["druid"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "Self",
@@ -3720,7 +4073,7 @@
 		"level": 1,
 		"school": "abjuration",
 		"classes": ["cleric"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "30 feet",
@@ -3763,7 +4116,7 @@
 		"level": 1,
 		"school": "evocation",
 		"classes": ["paladin"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"castingTrigger": "which you take immediately after hitting a target with a melee weapon or an unarmed strike",
@@ -3890,7 +4243,7 @@
 		"level": 1,
 		"school": "abjuration",
 		"classes": ["cleric", "paladin"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": true,
 		"ritual": false,
 		"range": "60 feet",
@@ -3904,7 +4257,7 @@
 		"level": 0,
 		"school": "transmutation",
 		"classes": ["druid"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": false,
 		"ritual": false,
 		"range": "Self",
@@ -3919,7 +4272,7 @@
 		"level": 2,
 		"school": "transmutation",
 		"classes": ["paladin"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": true,
 		"ritual": false,
 		"castingTrigger": "which you take immediately after hitting a creature with a melee weapon or an unarmed strike",
@@ -4144,7 +4497,7 @@
 		"level": 2,
 		"school": "evocation",
 		"classes": ["cleric"],
-		"actionType": "bonusAction",
+		"actionType": "bonus action",
 		"concentration": true,
 		"ritual": false,
 		"range": "60 feet",
@@ -4208,6 +4561,21 @@
 		"material": "diamond dust worth 100+ GP, which the spell consumes",
 		"duration": "up to 1 hour",
 		"description": "Until the spell ends, one willing creature you touch has Resistance to Bludgeoning, Piercing, and Slashing damage."
+	},
+	{
+		"name": "Storm of Radiance",
+		"level": 5,
+		"school": "evocation",
+		"classes": ["warlock", "wizard"],
+		"actionType": "action",
+		"concentration": true,
+		"ritual": false,
+		"range": "120 feet",
+		"components": ["v", "s", "m"],
+		"material": "a pinch of phosphorus",
+		"duration": "up to 1 minute",
+		"description": "You unleash a storm of flashing light and raging thunder in a 10-foot-radius, 40-foot-high Cylinder centered on a point you can see within range. While in this area, creatures have the Blinded and Deafened conditions, and they can’t cast spells with a Verbal component.\n\nWhen the storm appears, each creature in it makes a Constitution saving throw, taking 2d10 Radiant damage and 2d10 Thunder damage on a failed save or half as much damage on a successful one. A creature also makes this save when it enters the spell’s area for the first time on a turn or ends its turn there. A creature makes this save only once per turn.",
+		"higherLevelSlot": "The Radiant and Thunder damage increase by 1d10 for each spell slot level above 5."
 	},
 	{
 		"name": "Storm of Vengeance",

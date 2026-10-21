@@ -23,6 +23,8 @@ let max_spell_level = 1;
 let current_bonus = 0;
 let proficiency = 0;
 let spells_known = {0:{}, 1:{}, 2:{}, 3:{}, 4:{}, 5:{}, 6:{}, 7:{}, 8:{}, 9:{}};
+let homebrew_spell_list = {3:[], 5:[], 7:[], 9:[]}
+let current_form = "subclass"
 
 let how_to_popup = document.querySelector(".how-to-popup")
 let how_to_close = document.querySelector("#close-how-to")
@@ -51,6 +53,37 @@ long_rest.addEventListener("click", renderAllSpells);
 let spell_list = document.querySelector(".character-spell-list")
 let spell_popup = document.querySelector(".spell-popup")
 
+let homebrew_btn = document.querySelector(".homebrewPopUpBtn")
+let homebrewPopUp = document.querySelector(".homebrewPopUp")
+homebrew_btn.addEventListener("click", () => {homebrewPopUp.classList.toggle("hidden")})
+document.querySelector("#close-homebrew").addEventListener("click", () =>{homebrewPopUp.classList.toggle("hidden")})
+let subclass_form = document.querySelector("#subclass-form")
+let spell_form = document.querySelector('#spell-form')
+document.querySelector("#subclass-form-screen").addEventListener("click", () =>{generateHomebrewForm("subclass")})
+document.querySelector("#spell-form-screen").addEventListener("click", () => {generateHomebrewForm("spell")})
+
+let homebrew_subclass = document.querySelector("#homebrew-class")
+let homebrew_spell_section = document.querySelector(".homebrew-subclass-chosen-spells")
+let homebrew_spell_selector = document.querySelector("#homebrew-subclass-spells")
+homebrew_subclass.addEventListener("change", () =>{
+	homebrew_spell_list = {3:[], 5:[], 7:[], 9:[]}
+	if (["ranger", "paladin"].includes(homebrew_subclass.value)){
+		homebrew_spell_list = {3:[], 5:[], 9:[], 13:[], 17:[]}
+	}
+	creatHomebrewSpellListTemplate();
+})
+let homebrew_subclass_spell = document.querySelector("#homebrew-subclass-spells")
+let toggle_homebreww_spell_selection = document.querySelector("#add-spell-subclass")
+toggle_homebreww_spell_selection.addEventListener("click", toggleHomebrewSpell)
+document.querySelector("#subclass-submit").addEventListener("click", (event)=>{submitHomebrewSubclass(event)})
+
+let c_time = spell_form.querySelector("[data-field='c-time']")
+let c_trigger = spell_form.querySelector("[data-field='cast-trigger']")
+c_time.addEventListener("change", () => { if (["reaction", "bonus action2"].includes(c_time.value)){c_trigger.classList.remove("hidden")} else {c_trigger.classList.add("hidden")}})
+let m_components = spell_form.querySelector("[data-field='m-components']")
+spell_form.querySelector("[data-field='material']").addEventListener("click", () => {m_components.classList.toggle('hidden')})
+document.querySelector("#spell-submit").addEventListener("click", (event)=>{submitHomebrewSpell(event)})
+
 submit_stats.addEventListener("click", submitCharacteristics);
 
 toggle_spell_btn.addEventListener("click", () => {toggleSpell(spells[class_spell_list.value])});
@@ -66,6 +99,8 @@ async function initialize() {
     await loadSpells();
 	await loadSubclasses();
     renderAllSpells();
+	// fix rest of subclasses. Up to Sorcerous Burst. Also need to go back and change some at higher leves spells. Feign Death was the last one
+	populateSpellsHomebrew();
 }
 
 function showHowTo(){
@@ -167,23 +202,24 @@ function toggleSubclassSpells(){
 		}
 	}
 	if (subclass_list.value != 0){
-		for (let iter= 3; iter <= 9; iter += 2){
+		for (let iter= 3; iter <= 9; iter += 1){
 			if (iter <= current_level){
-				subclasses[current_class][subclass_list.value][iter].forEach(element => {
-					if (!(spells_known[iter].hasOwnProperty(element))){
-						for (var i in spells){
-							if (spells[i].name == element){
-								current_subclass_spells.add(spells[i])
-								toggleSpell(spells[i], true)
+				if (Object.hasOwn(subclasses[current_class][subclass_list.value], iter)){
+					subclasses[current_class][subclass_list.value][iter].forEach(element => {
+						if (!(spells_known[iter].hasOwnProperty(element))){
+							for (var i in spells){
+								if (spells[i].name == element){
+									current_subclass_spells.add(spells[i])
+									toggleSpell(spells[i], true)
+								}
 							}
 						}
-					}
-				});
+					});
+				}
 			}
 		}
 	}
 }
-// Changing subclass will leave the old spells in
 
 function renderAllSpells(){
 	let html = ""
@@ -291,7 +327,7 @@ function spellPopupTemplate (name, level){
     let duration = "";
     var spell_level = "";
     if (Object.hasOwn(spell, "castingTrigger")){
-        duration = `reaction, ${spell.castingTrigger}`;
+        duration = `${spell.actionType}, ${spell.castingTrigger}`;
     }
     else{
         duration = spell.actionType;
@@ -299,6 +335,10 @@ function spellPopupTemplate (name, level){
     if (Object.hasOwn(spell, "higherLevelSlot")){
         upcast = spell.higherLevelSlot
     }
+	else if (Object.hasOwn(spell, "cantripUpgrade")){
+		upcast = spell.cantripUpgrade
+	}
+
 
     if (spell.level == 0){
         var school = spell.school;
@@ -356,3 +396,118 @@ function attack(){
 	}
 }
 
+function populateSpellsHomebrew(){
+	homebrew_spell_selector.innerHTML = "";
+	options = ""
+	for (i = 0; i < spells.length; i++){
+		if (spells[i].level <= 5){
+			options += `<option value=${i}>${spells[i].name}  {Lv-${spells[i].level}}</option>`
+		}
+	}
+	homebrew_spell_selector.innerHTML = options;
+}
+
+function toggleHomebrewSpell(){
+	event.preventDefault();
+	let temp_spell = spells[homebrew_subclass_spell.value]
+	let full_caster = true
+	lv = 0
+	if (Object.keys(homebrew_spell_list).length == 5){
+		full_caster = false;
+	}
+	if (full_caster){
+		lv = 2*temp_spell.level-1
+	}
+	else{
+		lv = 4*temp_spell.level-3
+	}
+	if (lv < 3){
+		lv=3;
+	}
+	if (homebrew_spell_list[lv].includes(temp_spell.name)){
+		let index = homebrew_spell_list[lv].indexOf(temp_spell.name)
+		homebrew_spell_list[lv].splice(index, 1);
+	}
+	else{
+		homebrew_spell_list[lv].push(temp_spell.name)
+	}
+	creatHomebrewSpellListTemplate();
+}
+
+function creatHomebrewSpellListTemplate(){
+	let html = ``
+	for (const key in homebrew_spell_list){
+		html += `<p>Lv ${key}: `;
+		homebrew_spell_list[key].forEach(element => {
+			html += ` ${element},`
+		});
+		html.replace(/.$/, '')
+		html += `</p>`
+	}
+	homebrew_spell_section.innerHTML = html;
+}
+
+function submitHomebrewSubclass(event){
+	event.preventDefault()
+	const formData = new FormData(event.currentTarget.form);
+  	const data = Object.fromEntries(formData.entries());
+	subclasses[`${data["homebrew-class"]}`][`${data["subclass-name"]}`] = homebrew_spell_list
+	event.currentTarget.form.reset();
+	homebrew_spell_list = {3:[], 5:[], 7:[], 9:[]};
+}
+
+function submitHomebrewSpell(event){
+	event.preventDefault()
+	const formData = new FormData(event.currentTarget.form);
+  	const data = Object.fromEntries(formData.entries());
+	data.components = formData.getAll("comp[]");
+	data.classes = formData.getAll("classes[]");
+	let spell_dict = {
+		"name": data['spell-name'],
+		"level": parseInt(data["spell-lv"]),
+		"school": data.school,
+		"classes": data.classes,
+		"actionType": data["c-time"] != "bonus action2" ? data["c-time"] : "bonus action",
+		"concentration": data.conc === "true",
+		"ritual": data.rit === "true",
+		"range": data.range,
+		"components": data.components,
+		"duration": data.duration,
+		"description": data['spell-description']
+	}
+
+	if (["reaction", "bonus action2"].includes(data["c-time"])){		
+		spell_dict["castingTrigger"] = data["cast-trigger"]
+	}
+	if (data.components.includes("m")){
+		spell_dict["material"] = data["m-components"]
+	}
+	if (data["spell-upcast"] != ""){
+		if (parseInt(data["spell-lv"]) > 0){
+			spell_dict["higherLevelSlot"] = data["spell-upcast"]
+		}
+		else{
+			spell_dict["cantripUpgrade"] = data["spell-upcast"]
+		}
+	}
+
+	spells.push(spell_dict)
+	event.currentTarget.form.reset();
+	m_components.classList.toggle('hidden');
+	c_trigger.classList.toggle('hidden');
+}
+
+
+function generateHomebrewForm(form){
+	if (form == "subclass" && current_form == "spell"){
+		subclass_form.classList.toggle("hidden")
+		spell_form.classList.toggle("hidden")
+		current_form = "subclass"
+	}
+	else if (form == "spell" && current_form == "subclass") {
+		spell_form.classList.toggle("hidden")
+		subclass_form.classList.toggle("hidden")
+		current_form = "spell"
+	}
+	
+}
