@@ -77,6 +77,35 @@ header{
   border-bottom: 2px solid goldenrod;
 }
 
+.save_load_buttons{
+  margin-top: 0.74rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.loaded_file_input{
+  border-top: 2px solid goldenrod;
+  margin-top: 0.37rem;
+  padding-top: 0.37rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loaded_file_input input{
+  width: 200px;
+}
+
+.file_submit{
+  margin-top: 0.74rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 header p {
   text-align: center;
   color: maroon;
@@ -105,6 +134,13 @@ header img{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .characteristics-input form #spell-bonus{

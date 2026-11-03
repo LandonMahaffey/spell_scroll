@@ -8,7 +8,7 @@ async function loadSpells() {
 
 async function loadSubclasses() {
     const response = await fetch("subclass-spells.json");
-    temp = await response.json();
+    let temp = await response.json();
 	subclasses = temp[0]
 }
 
@@ -23,6 +23,8 @@ let max_spell_level = 1;
 let current_bonus = 0;
 let proficiency = 0;
 let spells_known = {0:{}, 1:{}, 2:{}, 3:{}, 4:{}, 5:{}, 6:{}, 7:{}, 8:{}, 9:{}};
+let homebrew_spells = []
+let homebrew_subclasses = {"bard": {}, "cleric": {}, "druid": {}, "paladin": {}, "ranger": {}, "sorcerer": {}, "warlock": {}, "wizard": {}}
 let homebrew_spell_list = {3:[], 5:[], 7:[], 9:[]}
 let current_form = "subclass"
 
@@ -84,13 +86,17 @@ let m_components = spell_form.querySelector("[data-field='m-components']")
 spell_form.querySelector("[data-field='material']").addEventListener("click", () => {m_components.classList.toggle('hidden')})
 document.querySelector("#spell-submit").addEventListener("click", (event)=>{submitHomebrewSpell(event)})
 
-submit_stats.addEventListener("click", submitCharacteristics);
+submit_stats.addEventListener("click", (event) => {submitCharacteristics(event)});
 
-toggle_spell_btn.addEventListener("click", () => {toggleSpell(spells[class_spell_list.value])});
-toggle_subclass_btn.addEventListener("click", toggleSubclassSpells)
+toggle_spell_btn.addEventListener("click", (event) => {toggleSpell(spells[class_spell_list.value], event)});
+toggle_subclass_btn.addEventListener("click", (event) => {toggleSubclassSpells(event)})
 
 how_to_use.addEventListener("click", showHowTo);
 how_to_close.addEventListener("click", showHowTo);
+
+file_input = document.querySelector(".loaded_file_input")
+file_input_submit = document.querySelector(".file_submit")
+document.querySelector("#load").addEventListener("click", toggleFileLoader)
 
 initialize()
 
@@ -99,7 +105,7 @@ async function initialize() {
     await loadSpells();
 	await loadSubclasses();
     renderAllSpells();
-	// fix rest of subclasses. Up to Sorcerous Burst. Also need to go back and change some at higher leves spells. Feign Death was the last one
+	// fix rest of subclasses. Up to Synaptic Static Also need to go back and change some at higher leves spells. Feign Death was the last one
 	populateSpellsHomebrew();
 }
 
@@ -107,8 +113,14 @@ function showHowTo(){
 	how_to_popup.classList.toggle("hidden")
 }
 
-function submitCharacteristics(){
+function toggleFileLoader(){
+	file_input.classList.toggle("hidden"); 
+	file_input_submit.classList.toggle("hidden");
+}
+
+function submitCharacteristics(event){
 	event.preventDefault();
+	current_subclass_spells.clear()
 	getStats();
 	createAvailableSpells();
 	renderAllSpells();
@@ -121,7 +133,7 @@ function createAvailableSpells(){
 	spells_known = {0:{}, 1:{}, 2:{}, 3:{}, 4:{}, 5:{}, 6:{}, 7:{}, 8:{}, 9:{}};
 	let options = "";
 
-	for (i = 0; i < spells.length; i++){
+	for (let i = 0; i < spells.length; i++){
 		if (spells[i].classes.includes(current_class) && spells[i].level <= max_spell_level){
 			options += `<option value=${i}>${spells[i].name}  {Lv-${spells[i].level}}</option>`
 		}
@@ -140,7 +152,7 @@ function populateSubclass(){
 	else{
 		subclass_section.classList.toggle("hidden");
 	}
-	options += "<option vlaue=0>No Subclass Spells</option>"
+	options += "<option value=0>No Subclass Spells</option>"
 	subclass_list.innerHTML = options;
 }
 
@@ -177,7 +189,7 @@ function getStats(){
 	populateSubclass();
 }
 
-function toggleSpell(spell, from_subclass = false){
+function toggleSpell(spell, event, from_subclass = false){
 	event.preventDefault();
 	if (proficiency != 0){
 		if (Object.hasOwn(spells_known[spell.level], spell.name) && (!(from_subclass) && !(current_subclass_spells.has(spell)))){
@@ -194,11 +206,11 @@ function toggleSpell(spell, from_subclass = false){
 	
 }
 
-function toggleSubclassSpells(){
+function toggleSubclassSpells(event){
 	if (current_subclass_spells.size != 0){
 		for (const x of current_subclass_spells){
 			current_subclass_spells.delete(x)
-			toggleSpell(x)
+			toggleSpell(x, event)
 		}
 	}
 	if (subclass_list.value != 0){
@@ -210,7 +222,7 @@ function toggleSubclassSpells(){
 							for (var i in spells){
 								if (spells[i].name == element){
 									current_subclass_spells.add(spells[i])
-									toggleSpell(spells[i], true)
+									toggleSpell(spells[i], event, true)
 								}
 							}
 						}
@@ -327,10 +339,10 @@ function spellPopupTemplate (name, level){
     let duration = "";
     var spell_level = "";
     if (Object.hasOwn(spell, "castingTrigger")){
-        duration = `${spell.actionType}, ${spell.castingTrigger}`;
+        duration = `${spell.castingTime}, ${spell.castingTrigger}`;
     }
     else{
-        duration = spell.actionType;
+        duration = spell.castingTime;
     }
     if (Object.hasOwn(spell, "higherLevelSlot")){
         upcast = spell.higherLevelSlot
@@ -399,7 +411,7 @@ function attack(){
 function populateSpellsHomebrew(){
 	homebrew_spell_selector.innerHTML = "";
 	options = ""
-	for (i = 0; i < spells.length; i++){
+	for (let i = 0; i < spells.length; i++){
 		if (spells[i].level <= 5){
 			options += `<option value=${i}>${spells[i].name}  {Lv-${spells[i].level}}</option>`
 		}
@@ -411,7 +423,7 @@ function toggleHomebrewSpell(){
 	event.preventDefault();
 	let temp_spell = spells[homebrew_subclass_spell.value]
 	let full_caster = true
-	lv = 0
+	let lv = 0
 	if (Object.keys(homebrew_spell_list).length == 5){
 		full_caster = false;
 	}
@@ -451,7 +463,11 @@ function submitHomebrewSubclass(event){
 	event.preventDefault()
 	const formData = new FormData(event.currentTarget.form);
   	const data = Object.fromEntries(formData.entries());
+	if (!Object.keys(subclasses).includes(`${data["homebrew-class"]}`)){
+		subclasses[`${data["homebrew-class"]}`] = {}
+	}
 	subclasses[`${data["homebrew-class"]}`][`${data["subclass-name"]}`] = homebrew_spell_list
+	homebrew_subclasses[`${data["homebrew-class"]}`][`${data["subclass-name"]}`] = homebrew_spell_list
 	event.currentTarget.form.reset();
 	homebrew_spell_list = {3:[], 5:[], 7:[], 9:[]};
 }
@@ -467,7 +483,7 @@ function submitHomebrewSpell(event){
 		"level": parseInt(data["spell-lv"]),
 		"school": data.school,
 		"classes": data.classes,
-		"actionType": data["c-time"] != "bonus action2" ? data["c-time"] : "bonus action",
+		"castingTime": data["c-time"] != "bonus action2" ? data["c-time"] : "bonus action",
 		"concentration": data.conc === "true",
 		"ritual": data.rit === "true",
 		"range": data.range,
@@ -492,6 +508,7 @@ function submitHomebrewSpell(event){
 	}
 
 	spells.push(spell_dict)
+	homebrew_spells.push(spell_dict)
 	event.currentTarget.form.reset();
 	m_components.classList.toggle('hidden');
 	c_trigger.classList.toggle('hidden');
@@ -511,3 +528,71 @@ function generateHomebrewForm(form){
 	}
 	
 }
+
+let scroll_name_input = document.querySelector("#scroll_name")
+document.querySelector("#save").addEventListener("click", generateJSONSave)
+
+function generateJSONSave() {
+	let save = {
+		"homebrewData":{
+			"spells": homebrew_spells,
+			"subclasses": homebrew_subclasses
+		},
+		"characterData":{
+			"current_class": current_class,
+			"current_subclass": subclass_list.value,
+			"current_level": current_level,
+			"current_bonus": current_bonus,
+			"spells_known": spells_known,
+		}
+	}
+	const blob = new Blob([JSON.stringify(save, null, 2)], {type: "application/json"});
+	const url = URL.createObjectURL(blob);
+	const link = document.createElement("a");
+
+	link.href = url;
+
+	let scroll_input = scroll_name_input.value.replace(/[\\/:*?"<>|.\x00-\x1F]/g, '').trimEnd();
+	if (scroll_input == ""){
+		scroll_input = "spell-scroll-save"
+	}
+	link.download = scroll_input + ".json";
+	link.click();
+	URL.revokeObjectURL(url);
+}
+
+const json_upload = document.querySelector("#json_upload")
+document.querySelector("#load_submit").addEventListener("click", () => {
+	const file = json_upload.files[0];
+	if (file) loadJSON(file, file.name);
+})
+
+async function loadJSON(file, name) {
+	try{
+		const text = await file.text();
+		sv_data = JSON.parse(text);
+		scroll_name_input.value = name.slice(0, name.lastIndexOf('.'));
+		class_input.value = sv_data.characterData.current_class;
+		level_input.value = parseInt(sv_data.characterData.current_level);
+		bonus_input.value = parseInt(sv_data.characterData.current_bonus);
+		homebrew_spells = sv_data.homebrewData.spells;
+		spells.push(...homebrew_spells)
+		homebrew_subclasses = sv_data.homebrewData.subclasses;
+		for (const [className, classSubclasses] of Object.entries(homebrew_subclasses)) {
+			if (!subclasses[className]) {
+				subclasses[className] = {};
+			}
+			Object.assign(subclasses[className], classSubclasses);
+		}
+		submit_stats.click();
+		subclass_list.value = sv_data.characterData.current_subclass;
+
+
+		spells_known = sv_data.characterData.spells_known;
+		renderAllSpells()
+		toggleFileLoader()
+	} catch (error){
+		alert(`${error.message}\nPlease load a Spell-Scroll save file.`)
+	}
+}
+

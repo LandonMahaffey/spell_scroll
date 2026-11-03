@@ -26,7 +26,7 @@
 
     <!-- One favicon (ICO works everywhere) -->
 
-    <link rel="icon" href="favicon.ico?v=2">
+    <link rel="icon" href="images/favico.png" sizes="32x32" href="/favicon-32x32.png">
 
     <!-- One Apple Touch Icon (iOS home screen) -->
 
@@ -36,6 +36,17 @@
     <header>
         <img src="images/Spell-Scroll-logo.png" alt="Logo image">
         <p id="how-to-use"><u>How to use this Web-tool</u></p>
+        <div class="save_load_buttons">
+            <button class="save_btn" id="save">Save Scroll</button>
+            <button class="load_btn" id="load">Load Scroll</button>
+        </div>
+        <div class="loaded_file_input hidden">
+            <label for="json_upload"> <b>Select a file: </b></label>
+            <input name="json_upload" type="file" id="json_upload">
+        </div>
+        <div class="file_submit hidden">
+            <button id="load_submit">Submit</button>
+        </div>
     </header>
     <img class="background" src="images/dnd-ampersand.png" alt="d&d ampersand">
 
@@ -237,6 +248,10 @@
     </div>
 
     <div class="characteristics-input">
+        <div class="name">
+                <label for="scroll_name">Scroll Name: </label>
+                <input name="scroll_name" id="scroll_name" value="spell-scroll-save">
+        </div>
         <form id="characteristics">
            <div class="field">
                 <label for="class">Choose a class:</label>
